@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart'; 
-
+import 'historial.dart';
+import 'dashboard.dart';
 void main() {
-  runApp(MyApp()); 
+  runApp(const MyApp()); 
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override 
   Widget build(BuildContext context) {
-    return MaterialApp( 
+    return const MaterialApp( 
       debugShowCheckedModeBanner: false,
       title: 'ParkVision', 
       home: HomeScreen()
@@ -16,21 +19,23 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override 
   Widget build(BuildContext context) {
     return Scaffold( 
       appBar: AppBar(
-        title: Text('ParkVision'),
+        title: const Text('ParkVision'),
         backgroundColor: Colors.green,
       ),
-      body: Center(
+      body: const Center(
         child: Text('Contenido'),
       ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            DrawerHeader(
+            const DrawerHeader(
               decoration: BoxDecoration(
                 color: Colors.green,
               ),
@@ -43,19 +48,19 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.history),
-              title: Text('Historial'),
+              leading: const Icon(Icons.history),
+              title: const Text('Historial'),
               onTap: () {
                 // Acción para Historial
-                Navigator.pop(context);
+                Navigator.push(context,MaterialPageRoute(builder: (context) => historial(),));
               },
             ),
             ListTile(
-              leading: Icon(Icons.dashboard),
-              title: Text('Dashboards'),
+              leading: const Icon(Icons.dashboard),
+              title: const Text('Dashboards'),
               onTap: () {
                 // Acción para Dashboards
-                Navigator.pop(context);
+                Navigator.push(context,MaterialPageRoute(builder: (context) => dashboard(),));
               },
             ),
           ],
