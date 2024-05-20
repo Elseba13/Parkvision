@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart'; 
-
+import 'historial.dart';
+import 'dashboard.dart';
 void main() {
   runApp(const MyApp()); 
 }
@@ -51,7 +52,7 @@ class HomeScreen extends StatelessWidget {
               title: const Text('Historial'),
               onTap: () {
                 // Acción para Historial
-                Navigator.pop(context);
+                Navigator.push(context,MaterialPageRoute(builder: (context) => historial(),));
               },
             ),
             ListTile(
@@ -59,7 +60,7 @@ class HomeScreen extends StatelessWidget {
               title: const Text('Dashboards'),
               onTap: () {
                 // Acción para Dashboards
-                Navigator.pop(context);
+                Navigator.push(context,MaterialPageRoute(builder: (context) => dashboard(),));
               },
             ),
           ],
