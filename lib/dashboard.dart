@@ -24,8 +24,13 @@ class Dashboard extends StatelessWidget {
         title: const Text('ParkVision'),
         backgroundColor: Colors.green,
       ),
-      body: const Center(
-        child: Text('Contenido'),
+      body:  Center(
+        child: Container(
+          margin: const EdgeInsets.all(10.0),
+          color: Colors.black,
+          width: 1200.0,
+          height: 480.0,
+        ),
       ),
       drawer: Drawer(
         child: ListView(
